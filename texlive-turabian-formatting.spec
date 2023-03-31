@@ -1,6 +1,6 @@
 Name:		texlive-turabian-formatting
 Version:	58561
-Release:	1
+Release:	2
 Summary:	Formatting based on Turabian's Manual
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/turabian-formatting
