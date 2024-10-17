@@ -3,7 +3,7 @@ Version:	58561
 Release:	2
 Summary:	Formatting based on Turabian's Manual
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/turabian-formatting
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/turabian-formatting
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/turabian-formatting.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/turabian-formatting.doc.r%{version}.tar.xz
