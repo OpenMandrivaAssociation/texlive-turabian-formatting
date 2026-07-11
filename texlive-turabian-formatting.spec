@@ -1,38 +1,22 @@
-Name:		texlive-turabian-formatting
-Version:	58561
-Release:	2
-Summary:	Formatting based on Turabian's Manual
+%global tl_name turabian-formatting
+%global tl_revision 58561
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
+Summary:	Formatting based on Turabians Manual
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/turabian-formatting
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/turabian-formatting.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/turabian-formatting.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/turabian-formatting.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/turabian-formatting.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The turabian-formatting package provides Chicago-style
-formatting based on Kate L. Turabian's "A Manual for Writers of
-Research Papers, Theses, and Dissertations: Chicago Style for
-Students and Researchers" (9th edition).
+The turabian-formatting package provides Chicago-style formatting based
+on Kate L. Turabian's "A Manual for Writers of Research Papers, Theses,
+and Dissertations: Chicago Style for Students and Researchers" (9th
+edition).
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/turabian-formatting
-%doc %{_texmfdistdir}/doc/latex/turabian-formatting
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
